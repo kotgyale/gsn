@@ -1,0 +1,128 @@
+<form #overviewForm="ngForm" (ngSubmit)="addDeatils(overviewForm)">
+    <div class="row">
+        <div class="col-md-3">
+            <label for="input">Input</label>
+        </div>
+        <div class="col-md-3">
+            <input type="text" class="form-control" name="input" [(ngModel)] = "input" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+        </div>
+        <div class="col-md-3">
+            <label for="textarea">Textarea</label>
+        </div>
+        <div class="col-md-3">
+            <textarea class="form-control" name="textarea" [(ngModel)] = "textarea" aria-label="With textarea" required></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="calender">calender</label>
+        </div>
+        <div class="col-md-3">
+            <input type="date" name="calender" [(ngModel)] = "calender" required>
+        </div>
+        <div class="col-md-3">
+            <label for="Country">Country</label>
+        </div>
+        <div class="col-md-3">
+            <input type="search" id="myInput" name="Country" [(ngModel)] = "country" (ngModelChange)="getcountry($event)" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <div class="autocomplete">
+                <option *ngFor="let option of countries" value="option" (click)="setCountry(option)">{{option}}</option>
+            </div> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="button">Save</label>
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-primary btn-sm btn-lg btn-block" [disabled]="!overviewForm.valid">Save</button>
+        </div>
+        <div class="col-md-3">
+            <label for="splitButton">SplitButton</label>
+        </div>
+        <div class="col-md-3">
+            <div class="btn-group btn-block">
+                <button class="btn btn-primary btn-sm btn-block dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 save
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Update</a>
+                    <a class="dropdown-item" href="#">Delete</a>
+                    <a class="dropdown-item" href="#">Animate</a>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="city">City</label>
+        </div>
+        <div class="col-md-3">
+            <select class="browser-default custom-select" name="city" [(ngModel)]="city" required>
+                <option value="Pune">Pune</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Kolkata">Kolkata</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label for="password">Password</label>
+        </div>
+        <div class="col-md-3">
+            <input type="password" name="password" id="password" [(ngModel)] = "password" class="form-control" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="list">ListBox</label>
+        </div>
+        <div class="col-md-3">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <label for="radios">Radio</label>
+        </div>
+        <div class="col-md-3">
+            <input type="radio" class="radio" id="male" name="gender" value="male" [(ngModel)]="gender">
+            <label for="male">Male</label><br>
+            <input type="radio" class="radio" id="female" name="gender" value="female" [(ngModel)]="gender">
+            <label for="female">Female</label><br>
+            <input type="radio" class="radio" id="other" name="gender" value="other" [(ngModel)]="gender">
+            <label for="other">Other</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="Dailog">Dailog</label>
+        </div>
+        <div class="col-md-9">
+            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">View</button>
+        </div>
+    </div>
+</form>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure to submit the form?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Ok</button>
+        </div>
+      </div>
+    </div>
+</div>
+

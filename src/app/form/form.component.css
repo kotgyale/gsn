@@ -1,0 +1,11 @@
+.row{
+    padding-bottom: 20px;
+}
+
+.autocomplete{
+    overflow: auto;
+}
+
+.radio{
+    margin-right: 5px;
+}
