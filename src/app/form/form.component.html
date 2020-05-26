@@ -46,9 +46,9 @@
                  save
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Update</a>
-                    <a class="dropdown-item" href="#">Delete</a>
-                    <a class="dropdown-item" href="#">Animate</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-sync-alt"></i> Update</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-trash"></i> Delete</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-external-link-alt"></i> Angular.io</a>
                 </div>
               </div>
         </div>
@@ -59,6 +59,7 @@
         </div>
         <div class="col-md-3">
             <select class="browser-default custom-select" name="city" [(ngModel)]="city" required>
+                <option selected>Select cities</option>
                 <option value="Pune">Pune</option>
                 <option value="Mumbai">Mumbai</option>
                 <option value="Kolkata">Kolkata</option>

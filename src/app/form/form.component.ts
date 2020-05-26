@@ -277,7 +277,6 @@ export class FormComponent implements OnInit {
   }
   
   getcountry(value){
-    console.log(value);
     if(value && value.trim()){
       var data = this.getCountryData();
       this.countries = data.filter(item => item.toLowerCase().includes(value.toLowerCase()));
